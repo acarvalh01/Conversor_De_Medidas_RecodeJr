@@ -1,39 +1,86 @@
-// Seleciona os elementos principais dos contêineres de formulário
-        const signInContainer = document.querySelector(".formSingin-Container");
-        const signUpContainer = document.querySelector(".formSingup-Container");
+const signInContainer = document.querySelector(".formSingin-Container");
+const signUpContainer = document.querySelector(".formSingup-Container");
+const signupLink = document.getElementById("singupLink");
+const signinLink = document.getElementById("singinLink");
 
-        // Seleciona os links para alternar entre os formulários
-        // Certifique-se de que as IDs no HTML (singupLink, singinLink) correspondam exatamente aqui.
-        const signupLink = document.getElementById("singupLink"); // Link "Cadastre-se" do form de login
-        const signinLink = document.getElementById("singinLink"); // Link "Entrar" do form de cadastro
+if (signupLink) {
+    signupLink.onclick = (e) => {
+        e.preventDefault();
+        signInContainer.style.display = "none";
+        signUpContainer.style.display = "flex";
+    };
+}
 
-        // Função para mostrar o formulário de Cadastro e esconder o de Login
-        if (signupLink) { // Boa prática: verificar se o elemento foi encontrado
-            signupLink.onclick = (e) => {
-                e.preventDefault(); // Evita que a página recarregue
-                signInContainer.style.display = "none";
-                signUpContainer.style.display = "flex"; // Ou "block" dependendo do seu layout
-            };
+if (signinLink) {
+    signinLink.onclick = (e) => {
+        e.preventDefault();
+        signUpContainer.style.display = "none";
+        signInContainer.style.display = "flex";
+    };
+}
+
+// LOGIN
+const loginForm = document.querySelector(".formSingin");
+loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const inputs = loginForm.querySelectorAll("input");
+    const email = inputs[0].value;
+    const password = inputs[1].value;
+
+    try {
+        const response = await fetch("http://localhost:3000/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, password }),
+        });
+
+        if (!response.ok) {
+            alert("Login falhou: " + (await response.json()).message);
+            return;
         }
 
-        // Função para mostrar o formulário de Login e esconder o de Cadastro
-        if (signinLink) { // Boa prática: verificar se o elemento foi encontrado
-            signinLink.onclick = (e) => {
-                e.preventDefault(); // Evita que a página recarregue
-                signUpContainer.style.display = "none";
-                signInContainer.style.display = "flex"; // Ou "block" dependendo do seu layout
-            };
+        const data = await response.json();
+        localStorage.setItem("token", data.token);
+        window.location.href = "historico.html"; // redireciona após login
+    } catch (error) {
+        console.error("Erro ao fazer login:", error);
+    }
+});
+
+// CADASTRO
+const signupForm = document.querySelector(".formSingup");
+signupForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const inputs = signupForm.querySelectorAll("input");
+    const name = inputs[0].value;
+    const email = inputs[1].value;
+    const password = prompt("Digite uma senha para cadastrar:");
+
+    if (!password) return alert("Senha obrigatória");
+
+    try {
+        const response = await fetch("http://localhost:3000/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name, email, password }),
+        });
+
+        if (!response.ok) {
+            alert("Cadastro falhou: " + (await response.json()).message);
+            return;
         }
 
-        
-        const loginButton = document.querySelector(".formSingin .singIn");
-        if (loginButton) { // Boa prática: verificar se o elemento foi encontrado
-            loginButton.onclick = (e) => {
-                e.preventDefault();
-                if (signupLink) { // Simula o clique no link "Cadastre-se"
-                    signupLink.click();
-                } else {
-                    console.warn("Link 'Cadastre-se' (ID singupLink) não encontrado. O botão de login não pode alternar.");
-                }
-            };
-        }
+        alert("Cadastro realizado com sucesso. Faça login!");
+        signinLink.click();
+    } catch (error) {
+        console.error("Erro ao cadastrar:", error);
+    }
+});
+
+
