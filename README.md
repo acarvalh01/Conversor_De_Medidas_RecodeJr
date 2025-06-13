@@ -38,7 +38,7 @@ O projeto conta com uma série de funcionalidades que criam uma experiência de 
 
 | Tela de Perfil (com upload) | Tela de Histórico |
 | :---: | :---: |
-| ![Tela de Perfil](img/login.png) | ![Tela de Histórico](img/historico.png) |
+| ![Tela de Perfil](img/perfil.png) | ![Tela de Histórico](img/historico.png) |
 
 ---
 
@@ -79,6 +79,4 @@ Este projeto utiliza a `Fetch API` para carregar componentes, o que exige que el
 
 Feito por Ana LaysaCarvalho e Arthur Legal
 
-* **LinkedIn:** [https://linkedin.com/in/seu-usuario](https://linkedin.com/in/seu-usuario)
-* **GitHub:** [https://github.com/seu-usuario](https://github.com/seu-usuario)
 
