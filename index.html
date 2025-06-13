@@ -12,17 +12,18 @@
     <div class="side-menu" id="side-menu">
         <nav>
             <div>
-                <a href="perfil.html" class="menu-link">Perfil</a>
-                <a href="#" class="menu-link">Início</a>
-                <a href="historico.html" class="menu-link">Histórico</a>
+                <a href="perfil.html" class="menu-link"> <img src="img/Perfil-a 1.png" alt=""> Perfil</a>
+                <a href="#" class="menu-link"><img src="img/inicio.png" alt="">Iníco</a>
+                <a href="historico.html" class="menu-link"><img src="img/histórico-a 1.png" alt="">Histórico</a>
+                
             </div>
             <div class="menu-footer">
-                <a href="login.html" class="menu-link">Sair</a>
+                <a href="login.html" class="menu-link"><img src="img/Sair 1.png" alt="">Sair</a>
             </div>
         </nav>
     </div>
 
-    <div class="page-wrapper">
+<div class="page-wrapper">
         <header class="main-header">
             <button class="menu-toggle" id="menu-toggle-btn" aria-label="Abrir menu">
                 <img src="img/menu-icon.png" alt="Menu"> 
@@ -35,7 +36,29 @@
         <main class="conversor-main">
             <h2>Conversor de medidas</h2>
             <div class="conversor-container">
-                </div>
+                <form id="converter-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="de">De:</label>
+                            <input type="text" id="de" required>
+                        </div>
+                        <div class="seta">→</div>
+                        <div class="form-group">
+                            <label for="para">Para:</label>
+                            <input type="text" id="para" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="valor">Valor:</label>
+                        <input type="number" id="valor" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="resultado" id="resultado">Resultado:</label>
+                        <input type="text" id="resultado" readonly>
+                    </div>
+                    <button type="submit" class="converter-btn">Converter</button>
+                </form>
+            </div>
         </main>
     </div>
 

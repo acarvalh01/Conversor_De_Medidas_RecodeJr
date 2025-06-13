@@ -25,7 +25,7 @@
             };
         }
 
-        // Opcional: Se você quer que o botão "Entrar" (do formulário de login) leve ao cadastro
+        
         const loginButton = document.querySelector(".formSingin .singIn");
         if (loginButton) { // Boa prática: verificar se o elemento foi encontrado
             loginButton.onclick = (e) => {

@@ -1,3 +1,19 @@
+
+*{
+    margin: 50;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F7D45C33;
+
+}
 .formSingup-Container{
     display: none;
 }

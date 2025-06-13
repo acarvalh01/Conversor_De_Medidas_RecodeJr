@@ -43,11 +43,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 40px;
+    padding-top: 90px;
 }
 
 .conversor-main h2 {
-    font-size: 32px;
+    font-size: 37px;
     font-weight: 700;
     color: #000;
     margin-bottom: 1rem;
@@ -80,14 +80,18 @@ body {
 }
 
 .form-group label {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     color: #000;
+}
+
+#resultado{
+    width: 300px;
 }
 
 .form-group input {
     background-color: #FDF1D3;
     border: none;
-    border-radius: 10px;
+    border-radius: 200px;
     padding: 0.8rem;
     font-size: 1rem;
     width: 200px;
@@ -96,7 +100,8 @@ body {
 .converter-btn {
     background-color: #F09141;
     border: none;
-    border-radius: 10px;
+    border-radius: 30px;
+    width: 250px;
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
     font-weight: bold;
