@@ -34,11 +34,11 @@ O projeto conta com uma série de funcionalidades que criam uma experiência de 
 
 | Tela de Login/Cadastro | Tela Principal (Conversor) |
 | :---: | :---: |
-| ![Tela de Login]() | ![Tela do Conversor]() |
+| ![Tela de Login](img/login.png) | ![Tela do Conversor](img/tela_inicial.png) |
 
 | Tela de Perfil (com upload) | Tela de Histórico |
 | :---: | :---: |
-| ![Tela de Perfil]() | ![Tela de Histórico]() |
+| ![Tela de Perfil](img/login.png) | ![Tela de Histórico](img/historico.png) |
 
 ---
 
