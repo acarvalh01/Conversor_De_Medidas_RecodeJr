@@ -77,6 +77,6 @@ Este projeto utiliza a `Fetch API` para carregar componentes, o que exige que el
 
 ### 👨‍💻 Autor
 
-Feito por Ana LaysaCarvalho e Arthur Legal
+Feito por Ana Laysa Carvalho e Arthur Legal
 
 
