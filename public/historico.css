@@ -1,4 +1,4 @@
-/* index.css - Estilos para a página do conversor */
+/* historico.css - Estilos para a página de histórico */
 body {
     background-image: url('img/corpoTexto.png');
     background-repeat: no-repeat;
@@ -39,74 +39,47 @@ body {
 }
 /* --- FIM DO CABEÇALHO --- */
 
-.conversor-main {
+.historico-main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 90px;
+    padding-top: 80px;
 }
 
-.conversor-main h2 {
-    font-size: 37px;
+.historico-main h2 {
+    font-size: 35px;
     font-weight: 700;
     color: #000;
     margin-bottom: 1rem;
 }
 
-.conversor-container {
+.historico-container {
     background-color: #F0BB41;
     border-radius: 20px;
-    padding: 2rem;
+    padding: 1.5rem;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.form-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.filtro-btn {
+    background-color: #F09141;
+    color: #000;
+    border: none;
+    border-radius: 9999px;
+    padding: 0.5rem 1.5rem;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
     margin-bottom: 1rem;
 }
 
-.seta {
-    font-size: 2rem;
-    color: #000;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.form-group label {
-    font-size: 1.5rem;
-    color: #000;
-}
-
-#resultado{
-    width: 300px;
-}
-
-.form-group input {
+.lista-entradas {
     background-color: #FDF1D3;
-    border: none;
-    border-radius: 200px;
-    padding: 0.8rem;
-    font-size: 1rem;
-    width: 200px;
-}
-
-.converter-btn {
-    background-color: #F09141;
-    border: none;
-    border-radius: 30px;
-    width: 250px;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #000;
-    cursor: pointer;
-    display: block;
-    margin: 1.5rem auto 0;
+    border-radius: 15px;
+    width: 100%;
+    min-height: 250px;
+    padding: 1rem;
 }

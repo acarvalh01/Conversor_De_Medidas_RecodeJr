@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Histórico - exataMedida</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="menu.css" />
+  <link rel="stylesheet" href="historico.css" />
+</head>
+<body>
+
+  <div class="side-menu" id="side-menu">
+    <nav>
+      <div>
+        <a href="perfil.html" class="menu-link"><img src="img/Perfil-a 1.png" alt=""> Perfil</a>
+        <a href="index.html" class="menu-link"><img src="img/início.png" alt=""> Início</a>
+        <a href="#" class="menu-link"><img src="img/histórico-a 1.png" alt=""> Histórico</a>
+      </div>
+      <div class="menu-footer">
+        <a href="#" class="menu-link" id="logout-btn"><img src="img/Sair 1.png" alt=""> Sair</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="page-wrapper">
+    <header class="main-header">
+      <button class="menu-toggle" id="menu-toggle-btn" aria-label="Abrir menu">
+        <img src="img/menu-icon.png" alt="Menu" />
+      </button>
+      <div class="logo">
+        <span>exataMedida</span>
+      </div>
+    </header>
+
+    <main class="historico-main">
+      <h2>Histórico</h2>
+      <div class="historico-container">
+        <button class="filtro-btn" id="btn-filtrar-hoje">Apenas de hoje</button>
+        <div class="lista-entradas">
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="menu.js"></script>
+  <script src="historico.js"></script>
+
+ 
+  <script>
+    document.getElementById("logout-btn").addEventListener("click", (e) => {
+      e.preventDefault();
+      localStorage.removeItem("token");
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>
+
+

@@ -1,19 +1,37 @@
 import express from 'express'
-import {PrismaClient} from '@prisma/client'
+import { PrismaClient } from '@prisma/client'
 import bcrypt from "bcrypt"
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 dotenv.config();
 
 const prisma = new PrismaClient()
+// CAMINHO ABSOLUTO PARA HTML
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express()
 app.use(express.json())
 
+// PARA SERVIR ARQUIVOS ESTÁTICOS
+app.use(express.static(path.join(__dirname, 'public')));
+
+// ROTA GET DE LOGIN (RENDERIZA login.html)
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+
 // ROTA POST DE USUÁRIOS
 app.post('/users', async (req, res) => {
   try {
+    const { email, name, password } = req.body;
+
+    if (!email || !name || !password) {
+      return res.status(400).json({ message: 'Email, nome e senha são obrigatórios.' });
+    }
     // TRANSFORMAR SENHA EM HASH
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
@@ -26,7 +44,7 @@ app.post('/users', async (req, res) => {
     });
 
     // REMOVER HASH DE SENHA DA RESPOSTA
-    const { password, ...userWithoutPassword } = newUser;
+    const { password: _, ...userWithoutPassword } = newUser;
 
     res.status(201).json(userWithoutPassword);
   } catch (error) {
@@ -69,7 +87,7 @@ app.post('/login', async (req, res) => {
   res.json({ token });
 });
 
-// MIDDLEWARE DE AITENTICAÇÃO
+// MIDDLEWARE DE AUTENTICAÇÃO
 function authenticateToken(req, res, next) {
   const authHeader = req.headers['authorization'];
   const token = authHeader?.split(' ')[1]; // BEARER TOKEN
@@ -132,6 +150,8 @@ app.get('/profile', authenticateToken, async (req, res) => {
 
 
 app.listen(3000)
+
+
 
 /*
 comandos utilizados
