@@ -1,5 +1,3 @@
-// perfil.js - Lógica da página de perfil
-
 document.addEventListener('DOMContentLoaded', () => {
     const fileUpload = document.getElementById('file-upload');
     const profilePicPreview = document.getElementById('profile-pic-preview');

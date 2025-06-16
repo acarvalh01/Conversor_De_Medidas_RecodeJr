@@ -44,7 +44,7 @@ loginForm.addEventListener("submit", async (e) => {
 
         const data = await response.json();
         localStorage.setItem("token", data.token);
-        window.location.href = "historico.html"; // redireciona após login
+        window.location.href = "index.html"; // redireciona após login
     } catch (error) {
         console.error("Erro ao fazer login:", error);
     }

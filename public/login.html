@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>exataMedida</title>
-    <link rel="stylesheet" href="loginCadastro.css">
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
     <div class="formSingin-Container">
@@ -20,13 +18,13 @@
         <form class="formSingin">
             <h1>Entrar</h1>
             <div class="formGroup">
-                <input required="required" type="text">
+                <input required="required" type="email" id="email">
                 <span>Usuário</span>
                 <i></i>
             </div>
 
             <div class="formGroup">
-                <input  required="required" type="password"/>
+                <input  required="required" type="password" id="password"/>
                 <span>Senha</span>
                 <i></i>
             </div>
@@ -48,7 +46,7 @@
         </div>
         <div class="paddingForm">
             
-        <form class="formSingup">
+        <form class="formSingup" id="login-form">
             <h1>Cadastro</h1>
             <div class="formGroup">
                 <input required="required" type="text">
@@ -61,6 +59,7 @@
                 <span>Email:</span>
                 <i></i>
             </div>
+            
             <div class="formGroup"><button class="singIn">Criar</button></div>
             <div class="singUp">
                 <span>Já tem uma conta? <a href="#" id="singinLink">Entrar</a></span>
